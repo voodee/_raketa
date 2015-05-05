@@ -68,10 +68,17 @@
     "pretty-hrtime": "~1.0.0",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~1.0.0",
-    "watchify": "^2.4.0"
+    "watchify": "^2.4.0",
+    "gulp-haml": "*",
+    "gulp-haml-coffee": "*",
+    "gulp-stylus": "*",
+    "nib": "*",
+    "gulp-myth": "*",
+    "bootstrap-styl": "*"
   },
   "dependencies": {
     "backbone": "~1.1.2",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "nib": "*"
   }
 }

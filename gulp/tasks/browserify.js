@@ -11,7 +11,6 @@
 var browserify   = require('browserify');
 var browserSync  = require('browser-sync');
 var watchify     = require('watchify');
-var mergeStream  = require('merge-stream');
 var bundleLogger = require('../util/bundleLogger');
 var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
@@ -19,7 +18,9 @@ var source       = require('vinyl-source-stream');
 var config       = require('../config').browserify;
 var _            = require('lodash');
 
-var browserifyTask = function(devMode) {
+var browserifyTask = function(callback, devMode) {
+
+  var bundleQueue = config.bundleConfigs.length;
 
   var browserifyThis = function(bundleConfig) {
 
@@ -27,8 +28,7 @@ var browserifyTask = function(devMode) {
       // Add watchify args and debug (sourcemaps) option
       _.extend(bundleConfig, watchify.args, { debug: true });
       // A watchify require/external bug that prevents proper recompiling,
-      // so (for now) we'll ignore these options during development. Running
-      // `gulp browserify` directly will properly require and externalize.
+      // so (for now) we'll ignore these options during development
       bundleConfig = _.omit(bundleConfig, ['external', 'require']);
     }
 
@@ -48,9 +48,8 @@ var browserifyTask = function(devMode) {
         .pipe(source(bundleConfig.outputName))
         // Specify the output destination
         .pipe(gulp.dest(bundleConfig.dest))
-        .pipe(browserSync.reload({
-          stream: true
-        }));
+        .on('end', reportFinished)
+        .pipe(browserSync.reload({stream:true}));
     };
 
     if(devMode) {
@@ -68,17 +67,28 @@ var browserifyTask = function(devMode) {
       if(bundleConfig.external) b.external(bundleConfig.external);
     }
 
+    var reportFinished = function() {
+      // Log when bundling completes
+      bundleLogger.end(bundleConfig.outputName);
+
+      if(bundleQueue) {
+        bundleQueue--;
+        if(bundleQueue === 0) {
+          // If queue is empty, tell gulp the task is complete.
+          // https://github.com/gulpjs/gulp/blob/master/docs/API.md#accept-a-callback
+          callback();
+        }
+      }
+    };
+
     return bundle();
   };
 
   // Start bundling with Browserify for each bundleConfig specified
-  return mergeStream.apply(gulp, _.map(config.bundleConfigs, browserifyThis));
-
+  config.bundleConfigs.forEach(browserifyThis);
 };
 
-gulp.task('browserify', function() {
-  return browserifyTask()
-});
+gulp.task('browserify', browserifyTask);
 
 // Exporting the task so we can call it directly in our watch task, with the 'devMode' option
 module.exports = browserifyTask;
