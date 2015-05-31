@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   stylus: {
-    src: src + "/stylus/**/*.styl",
+    src: src + "/stylus/*.styl",
     dest: dest + "/css"
   },
   images: {

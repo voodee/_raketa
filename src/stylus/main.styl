@@ -1,2 +1,803 @@
-@import bootstrap
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,900italic,900,700italic&subset=latin,cyrillic)
+
+$font-family-base = 'Roboto', sans-serif
+
+@import nib
+@import bootstrap
+
+
+
+
+
+
+
+$color_secondary = #fff
+$anim-time = .5s
+
+.noscroll
+  overflow hidden
+
+.view-single .grid::after
+  opacity 1
+
+.grid
+  position relative
+
+  &__item
+    &--loading
+      .loader::before
+        transition transform 1s
+        transition-timing-function cubic-bezier(.165, .84, .44, 1)
+        transform scale3d(1, 1, 1)
+
+    &--animate
+      .loader
+        transition-delay .1s
+        opacity 0
+        transform translate3d(0, -30px, 0)
+
+.loader
+  height 1px
+  width 40%
+  margin 1em auto
+  position relative
+  background rgba(0,0,0,.1)
+  transition-delay .1s
+
+  &::before
+    content ''
+    position absolute
+    width 100%
+    height 3px
+    background #a4e7ad
+    left 0
+    top -1px
+    transform scale3d(0,1,1)
+    transform-origin 0% 50%
+
+.scroll-wrap
+  position absolute
+  width 100%
+  height 100%
+  left 0
+  top 0
+  z-index 1
+  overflow-y scroll
+  -webkit-overflow-scrolling touch
+
+.placeholder
+  pointer-events none
+  position absolute
+  width calc(100% + 5px)
+  height calc(100vh + 5px)
+  z-index 100
+  top 0
+  left 0
+  background $color_secondary
+  transform-origin 0 0
+
+  &--trans
+    &-in
+      transition transform $anim-time
+      transition-timing-function cubic-bezier(.165,.84,.44,1)
+
+    &-out
+      transition transform $anim-time
+
+.content
+  position absolute
+  top 0
+  left 0
+  width 100%
+  pointer-events none
+  height 0
+  visibility hidden
+  z-index 400
+  overflow hidden
+
+  &.content--show
+    height 100vh
+    pointer-events auto
+    visibility visible
+
+  &__item
+    position absolute
+    top 0
+    width 100%
+    overflow hidden
+    height 0
+    opacity 0
+    pointer-events none
+
+    &--show
+      height auto
+      min-height 100vh
+      opacity 1
+      pointer-events auto
+      transition opacity .6s
+
+  .close-button
+    position absolute
+    z-index 100
+    
+
+
+
+
+
+
+
+#theGrid
+  margin 1000px 0
+
+body
+  font-weight 300
+  font-smoothing antialiased
+  text-rendering optimizeLegibility
+
+
+.item
+  
+  &-container
+    // Empty
+
+  &-link
+    display block
+    position relative
+    margin 5% 
+    
+    &:hover
+    &:focus
+      .item
+        &-text
+          opacity 1  
+        
+          &-noimg
+            .item-table
+              box-shadow inset 0 0 0 10px #e2cf51
+
+  &-box
+    padding 15% 
+    
+    &-img
+      width 100%
+    
+  &-text
+    position absolute
+    top 0
+    left 0  
+    bottom 0
+    
+    opacity 0
+    transition all .2s ease-in
+  
+    &-inner
+      display table-cell
+      vertical-align middle
+      
+    &-noimg
+      position relative
+      opacity 1  
+      
+      .item-table
+        box-shadow inset 0px 0px 0px 6px #e2cf51
+        
+    &-desc
+      color #64686a 
+      
+    &-title 
+      font-weight 300   
+    
+  &-table
+    display table
+    width 100%
+    height 100%
+    text-align center
+    color #262526
+    background rgba(255, 255, 255, .5)
+    padding 10%
+    transition all .2s ease-in
+      
+
+
+
+
+
+
+
+.cd-nav-trigger
+  position fixed
+  z-index 3
+  top 12px
+  right 5%
+  height 44px
+  width 44px
+  overflow hidden
+  text-indent 100%
+  white-space nowrap
+  -webkit-transition -webkit-transform 0.2s
+  -moz-transition -moz-transform 0.2s
+  transition transform 0.2s
+  span
+    position absolute
+    left 50%
+    top 50%
+    bottom auto
+    right auto
+    -webkit-transform translateX(-50%) translateY(-50%)
+    -moz-transform translateX(-50%) translateY(-50%)
+    -ms-transform translateX(-50%) translateY(-50%)
+    -o-transform translateX(-50%) translateY(-50%)
+    transform translateX(-50%) translateY(-50%)
+    width 32px
+    height 3px
+    background-color black
+    &::before
+      -webkit-transform-origin right top
+      -moz-transform-origin right top
+      -ms-transform-origin right top
+      -o-transform-origin right top
+      transform-origin right top
+      -webkit-transform translateY(-10px)
+      -moz-transform translateY(-10px)
+      -ms-transform translateY(-10px)
+      -o-transform translateY(-10px)
+      transform translateY(-10px)
+    &::after
+      -webkit-transform-origin right bottom
+      -moz-transform-origin right bottom
+      -ms-transform-origin right bottom
+      -o-transform-origin right bottom
+      transform-origin right bottom
+      -webkit-transform translateY(10px)
+      -moz-transform translateY(10px)
+      -ms-transform translateY(10px)
+      -o-transform translateY(10px)
+      transform translateY(10px)
+
+.cd-nav-trigger span::before, .cd-nav-trigger span:after
+  content ''
+  position absolute
+  top 0
+  right 0
+  width 100%
+  height 100%
+  background-color inherit
+  -webkit-transform translateZ(0)
+  -moz-transform translateZ(0)
+  -ms-transform translateZ(0)
+  -o-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+  -webkit-transition -webkit-transform 0.2s, width 0.2s
+  -moz-transition -moz-transform 0.2s, width 0.2s
+  transition transform 0.2s, width 0.2s
+
+.no-touch
+  .cd-nav-trigger
+    &:hover
+      -webkit-transform rotate(180deg)
+      -moz-transform rotate(180deg)
+      -ms-transform rotate(180deg)
+      -o-transform rotate(180deg)
+      transform rotate(180deg)
+      span
+        &::before
+          -webkit-transform translateX(1px) translateY(1px) rotate(45deg)
+          -moz-transform translateX(1px) translateY(1px) rotate(45deg)
+          -ms-transform translateX(1px) translateY(1px) rotate(45deg)
+          -o-transform translateX(1px) translateY(1px) rotate(45deg)
+          transform translateX(1px) translateY(1px) rotate(45deg)
+        &::after
+          -webkit-transform translateX(1px) translateY(-1px) rotate(-45deg)
+          -moz-transform translateX(1px) translateY(-1px) rotate(-45deg)
+          -ms-transform translateX(1px) translateY(-1px) rotate(-45deg)
+          -o-transform translateX(1px) translateY(-1px) rotate(-45deg)
+          transform translateX(1px) translateY(-1px) rotate(-45deg)
+
+.no-touch .cd-nav-trigger:hover span::after,
+.no-touch .cd-nav-trigger:hover span::before
+  width 50%
+
+
+.cd-nav-container
+  position fixed
+  z-index 4
+  top 0
+  right 0
+  width 80%
+  height 100%
+  overflow-y auto
+  background-color #ffffff
+  -webkit-transform translateZ(0)
+  -moz-transform translateZ(0)
+  -ms-transform translateZ(0)
+  -o-transform translateZ(0)
+  transform translateZ(0)
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+  -webkit-transform translateX(100%)
+  -moz-transform translateX(100%)
+  -ms-transform translateX(100%)
+  -o-transform translateX(100%)
+  transform translateX(100%)
+  -webkit-transition -webkit-transform 0.4s 0s, box-shadow 0s 0.4s
+  -moz-transition -moz-transform 0.4s 0s, box-shadow 0s 0.4s
+  transition transform 0.4s 0s, box-shadow 0s 0.4s
+  &.is-visible
+    -webkit-transform translateX(0)
+    -moz-transform translateX(0)
+    -ms-transform translateX(0)
+    -o-transform translateX(0)
+    transform translateX(0)
+    -webkit-overflow-scrolling touch
+    box-shadow -4px 0 30px rgba(0, 0, 0, 0.2)
+    -webkit-transition -webkit-transform 0.4s 0s, box-shadow 0s 0s
+    -moz-transition -moz-transform 0.4s 0s, box-shadow 0s 0s
+    transition transform 0.4s 0s, box-shadow 0s 0s
+  header
+    padding 1.5em 0 0 6.25%
+    height 68px
+    position relative
+  h3
+    font-size 1.6rem
+    font-weight bold
+    font-family "Lora", serif
+    text-transform uppercase
+    color #5c4b51
+
+
+.cd-close-nav
+  position absolute
+  height 44px
+  width 44px
+  right 6.25%
+  top 50%
+  bottom auto
+  -webkit-transform translateY(-50%)
+  -moz-transform translateY(-50%)
+  -ms-transform translateY(-50%)
+  -o-transform translateY(-50%)
+  transform translateY(-50%)
+  overflow hidden
+  text-indent 100%
+  white-space nowrap
+  -webkit-transition opacity 0.2s
+  -moz-transition opacity 0.2s
+  transition opacity 0.2s
+  &::after
+    -webkit-transform translateX(-50%) translateY(-50%) rotate(45deg)
+    -moz-transform translateX(-50%) translateY(-50%) rotate(45deg)
+    -ms-transform translateX(-50%) translateY(-50%) rotate(45deg)
+    -o-transform translateX(-50%) translateY(-50%) rotate(45deg)
+    transform translateX(-50%) translateY(-50%) rotate(45deg)
+  &::before
+    -webkit-transform translateX(-50%) translateY(-50%) rotate(-45deg)
+    -moz-transform translateX(-50%) translateY(-50%) rotate(-45deg)
+    -ms-transform translateX(-50%) translateY(-50%) rotate(-45deg)
+    -o-transform translateX(-50%) translateY(-50%) rotate(-45deg)
+    transform translateX(-50%) translateY(-50%) rotate(-45deg)
+
+.cd-close-nav::after, .cd-close-nav::before
+  content ''
+  position absolute
+  height 3px
+  width 32px
+  left 50%
+  top 50%
+  background-color #5c4b51
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+
+.no-touch
+  .cd-close-nav
+    &:hover
+      opacity .8
+
+.cd-nav
+  background-color #f2f2f2
+  &::after
+    clear both
+    content ""
+    display table
+  li
+    width 50%
+    float left
+    height calc((100vh - 68px)/3)
+    min-height 120px
+    border 1px solid #ffffff
+    border-top none
+    border-left none
+    &:nth-of-type(2n)
+      border-right-width 0
+  a
+    position relative
+    display block
+    width 100%
+    height 100%
+    text-align center
+    -webkit-transition background-color 0.2s
+    -moz-transition background-color 0.2s
+    transition background-color 0.2s
+  span
+    top calc(50% - 48px)
+    left 50%
+    -webkit-transform translateX(-50%)
+    -moz-transform translateX(-50%)
+    -ms-transform translateX(-50%)
+    -o-transform translateX(-50%)
+    transform translateX(-50%)
+    height 48px
+    width 48px
+    *
+      -webkit-transition stroke 0.2s
+      -moz-transition stroke 0.2s
+      transition stroke 0.2s
+  em
+    width 100%
+    left 0
+    top calc(50% + 15px)
+    color #5c4b51
+    -webkit-transition color 0.2s
+    -moz-transition color 0.2s
+    transition color 0.2s
+    -webkit-backface-visibility hidden
+    backface-visibility hidden
+
+.no-touch
+  .cd-nav
+    a
+      &:hover
+        svg
+          -webkit-animation cd-shock 0.3s
+          -moz-animation cd-shock 0.3s
+          animation cd-shock 0.3s
+
+.no-touch .cd-nav li a:hover span *,
+.cd-nav li.cd-selected a span *
+  stroke #ffffff
+
+.no-touch .cd-nav li a:hover em,
+.cd-nav li.cd-selected a em
+  color #ffffff
+
+.no-touch .cd-nav li:first-of-type a:hover,
+.cd-nav li.cd-selected:first-of-type a
+  background-color #9e87ce
+
+.no-touch .cd-nav li:nth-of-type(2) a:hover,
+.cd-nav li.cd-selected:nth-of-type(2) a
+  background-color #5c4b51
+
+.no-touch .cd-nav li:nth-of-type(3) a:hover,
+.cd-nav li.cd-selected:nth-of-type(3) a
+  background-color #e0cf75
+
+.no-touch .cd-nav li:nth-of-type(4) a:hover,
+.cd-nav li.cd-selected:nth-of-type(4) a
+  background-color #f5b65a
+
+.no-touch .cd-nav li:nth-of-type(5) a:hover,
+.cd-nav li.cd-selected:nth-of-type(5) a
+  background-color #f25f5c
+
+.no-touch .cd-nav li:nth-of-type(6) a:hover,
+.cd-nav li.cd-selected:nth-of-type(6) a
+  background-color #8abeb2
+
+.cd-nav span, .cd-nav em
+  position absolute
+
+
+
+.cd-overlay
+  position fixed
+  height 100%
+  width 100%
+  top 0
+  left 0
+  cursor pointer
+  background-color rgba(0, 0, 0, 0.35)
+  visibility hidden
+  opacity 0
+  -webkit-backface-visibility hidden
+  backface-visibility hidden
+  -webkit-transition opacity 0.4s 0s, visibility 0s 0.4s
+  -moz-transition opacity 0.4s 0s, visibility 0s 0.4s
+  transition opacity 0.4s 0s, visibility 0s 0.4s
+  &.is-visible
+    opacity 1
+    visibility visible
+    -webkit-transition opacity 0.4s 0s, visibility 0s 0s
+    -moz-transition opacity 0.4s 0s, visibility 0s 0s
+    transition opacity 0.4s 0s, visibility 0s 0s
+
+main
+  position relative
+  height 100vh
+  overflow-x hidden
+  -webkit-transition -webkit-transform 0.4s
+  -moz-transition -moz-transform 0.4s
+  transition transform 0.4s
+  box-shadow 0 0 30px #241d20
+  &.scale-down
+    -webkit-transform scale(0.9)
+    -moz-transform scale(0.9)
+    -ms-transform scale(0.9)
+    -o-transform scale(0.9)
+    transform scale(0.9)
+
+.cd-section
+  position absolute
+  z-index 1
+  top 0
+  left 0
+  height 100%
+  width 100%
+  overflow-y auto
+  -webkit-transform translateX(100%)
+  -moz-transform translateX(100%)
+  -ms-transform translateX(100%)
+  -o-transform translateX(100%)
+  transform translateX(100%)
+  -webkit-transition -webkit-transform 0s 0.4s
+  -moz-transition -moz-transform 0s 0.4s
+  transition transform 0s 0.4s
+  &.cd-selected
+    position relative
+    z-index 2
+    -webkit-transform translateX(0)
+    -moz-transform translateX(0)
+    -ms-transform translateX(0)
+    -o-transform translateX(0)
+    transform translateX(0)
+    -webkit-transition -webkit-transform 0.4s 0s
+    -moz-transition -moz-transform 0.4s 0s
+    transition transform 0.4s 0s
+    -webkit-overflow-scrolling touch
+  header
+    height 100vh
+    background #9e87ce
+    position relative
+  &.projects
+    header
+      background-color #5c4b51
+  &.about
+    header
+      background-color #e0cf75
+  &.services
+    header
+      background-color #f5b65a
+  &.careers
+    header
+      background-color #f25f5c
+  &.contact
+    header
+      background-color #8abeb2
+
+
+.cd-title
+  position relative
+  top 48%
+  -webkit-transform translateY(-50%)
+  -moz-transform translateY(-50%)
+  -ms-transform translateY(-50%)
+  -o-transform translateY(-50%)
+  transform translateY(-50%)
+  color #ffffff
+  text-align center
+  & > *
+    text-shadow 0 1px 2px rgba(0, 0, 0, 0.05)
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+  h2
+    font-size 2.8rem
+    margin-bottom .8em
+  a
+    display inline-block
+    padding 1.2em 1.6em
+    border-radius 50em
+    border 2px solid rgba(255, 255, 255, 0.5)
+    font-weight 700
+    color #ffffff
+    font-family "Lora", serif
+  span
+    vertical-align middle
+    display inline-block
+
+.no-touch
+  .cd-title
+    a
+      &:hover
+        border-color #ffffff
+
+.cd-content
+  background-color #ffffff
+  padding 4em 0
+  p
+    width 90%
+    max-width 800px
+    margin 2em auto
+    line-height 2
+    color #78626a
+
+.no-js main, .no-js .cd-section
+  height auto
+  overflow visible
+
+.no-js
+  .cd-section
+    position static
+    -webkit-transform translateX(0)
+    -moz-transform translateX(0)
+    -ms-transform translateX(0)
+    -o-transform translateX(0)
+    transform translateX(0)
+  .cd-nav-container
+    width 100%
+    position static
+    -webkit-transform translateX(0)
+    -moz-transform translateX(0)
+    -ms-transform translateX(0)
+    -o-transform translateX(0)
+    transform translateX(0)
+    height auto
+    overflow visible
+  .cd-close-nav
+    display none
+  .cd-nav
+    li
+      width 50%
+      float left
+
+
+
+@media only screen and (min-width: 1024px) {
+  .cd-nav-trigger {
+    top: 38px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .cd-nav-container {
+    width: 70%;
+  }
+  .cd-nav-container header {
+    height: 116px;
+    padding-top: 3em;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .cd-close-nav {
+    right: 7.14%;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .cd-section {
+    /* not 100vh to fix a small bug --> border visible otherwise */
+    header: 102vh;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .cd-nav li {
+    /* 116px is the navigation header height and the menu items will be allocated in 3 rows */
+    height: calc((100vh - 116px)/3);
+    min-height: 200px;
+  }
+  .cd-nav span {
+    height: 64px;
+    width: 64px;
+    top: calc(50% - 56px);
+  }
+  .cd-nav em {
+    font-size: 2.2rem;
+    font-weight: 300;
+    top: calc(50% + 21px);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-nav li {
+    width: 33.33%;
+    float: left;
+    /* 116px is the navigation header height  and the menu items will be allocated in 2 rows */
+    height: calc((100vh - 116px)/2);
+    min-height: 250px;
+  }
+  .cd-nav li:nth-of-type(2n) {
+    border-right-width: 1px;
+  }
+  .cd-nav li:nth-of-type(3n) {
+    border-right-width: 0;
+  }
+  .cd-nav em {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .cd-title h2 {
+    font-size: 5rem;
+    font-weight: 300;
+    margin-bottom: .6em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .no-js .cd-nav li {
+    width: 33.3%;
+    float: left;
+  }
+  .no-js .cd-nav li:nth-of-type(2n) a {
+    border-right-width: 1px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .no-js .cd-nav li {
+    width: 16.66%;
+    float: left;
+  }
+  .no-js .cd-nav li:nth-of-type(3n) a {
+    border-right-width: 1px solid #e0cf75;
+  }
+}
+
+
+@-webkit-keyframes cd-shock {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+  }
+}
+@-moz-keyframes cd-shock {
+  0% {
+    -moz-transform: rotate(0);
+  }
+  30% {
+    -moz-transform: rotate(10deg);
+  }
+  60% {
+    -moz-transform: rotate(-10deg);
+  }
+  100% {
+    -moz-transform: rotate(0);
+  }
+}
+@keyframes cd-shock {
+  0% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+  30% {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+    -o-transform: rotate(10deg);
+    transform: rotate(10deg);
+  }
+  60% {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -o-transform: rotate(0);
+    transform: rotate(0);
+  }
+}
