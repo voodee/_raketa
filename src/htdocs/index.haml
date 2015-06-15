@@ -12,118 +12,16 @@
     %script{:src => "js/modernizr-2.8.3.min.js"}
   %body#skrollr-body
     /[if lt IE 8]
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      %p.browserupgrade 
+        You are using an 
+        %strong outdated
+        browser. Please 
+        %a{ :href => "http://browsehappy.com/"} upgrade your browser
+        to improve your experience
     / Add your site or application content here
 
 
-    %section#theGrid
-      %section.grid
-        .container.item-container
-          .col-xs-12.col-sm-6.col-md-4.item
-            %a.grid__item.item-link{:href => "#"}
-              .item-box
-                %img{ :src => 'img/portfolio/marianna.jpg', :title => '', :alt => '', :class => 'item-box-img' }
-              .item-text
-                .item-table
-                  .item-text-inner
-                    %h2.title.title--preview.item-text-title On Humans & other Beings
-                    .loader
-              / %span.category Stories for humans
-              / .meta.meta--preview
-              /   %span.meta__date
-              /     %i.fa.fa-calendar-o
-              /     9 Apr
-              /   %span.meta__reading-time
-              /     %i.fa.fa-clock-o
-              /     3 min read
-
-          .col-xs-12.col-sm-6.col-md-4.item
-            %a.grid__item.item-link{:href => "#"}
-              .item-text.item-text-noimg
-                .item-table
-                  .item-text-inner
-                    %h2.title.title--preview.item-text-title Скачать презентацию
-                    .loader
-                    %span.category.item-text-desc Кратко и понятно
-
-
-          .col-xs-12.col-sm-6.col-md-4
-
-    
-
-        %section.content
-          .scroll-wrap
-            %article.content__item
-              %span.category.category--full Stories for humans
-              %h2.title.title--full On Humans & other Beings
-              .meta.meta--full
-                %span.meta__author Matthew Walters
-                %span.meta__date
-                  %i.fa.fa-calendar-o
-                  9 Apr
-                %span.meta__reading-time
-                  %i.fa.fa-clock-o
-                  3 min read
-              %p I am fully aware of the shortcomings in these essays. I shall not touch upon those which are characteristic of first efforts at investigation. The others, however, demand a word of explanation.
-              %p The four essays which are here collected will be of interest to a wide circle of educated people, but they can only be thoroughly understood and judged by those who are really acquainted with psychoanalysis as such. It is hoped that they may serve as a bond between students of ethnology, philology, folklore and of the allied sciences, and psychoanalysts; they cannot, however, supply both groups the entire requisites for such co-operation. They will not furnish the former with sufficient insight into the new psychological technique, nor will the psychoanalysts acquire through them an adequate command over the material to be elaborated. Both groups will have to content themselves with whatever attention they can stimulate here and there and with the hope that frequent meetings between them will not remain unproductive for science. life, which it is their object to preserve, a burden and sorrow to him.”
-              %p
-                Excerpts from
-                %a{:href => "http://www.gutenberg.org/ebooks/41214"} Totem and Taboo
-                by Sigmund Freud.
-            %article.content__item
-              %span.category.category--full Love & Hate
-              %h2.title.title--full The Things we Lost in the Fire
-              .meta.meta--full
-                %span.meta__author Christian Belverde
-                %span.meta__date
-                  %i.fa.fa-calendar-o
-                  7 Apr
-                %span.meta__reading-time
-                  %i.fa.fa-clock-o
-                  5 min read
-              %p Faulty psychic actions, dreams and wit are products of the unconscious mental activity, and like neurotic or psychotic manifestations represent efforts at adjustment to one’s environment.
-              %p The slip of the tongue shows that on account of unconscious inhibitions the individual concerned is unable to express his true thoughts; the dream is a distorted or plain expression of those wishes which are prohibited in the waking states, and the witticism, owing to its veiled or indirect way of expression, enables the individual to obtain pleasure from forbidden sources. But whereas dreams, witticisms, and faulty actions give evidences of inner conflicts which the individual overcomes, the neurotic or psychotic symptom is the result of a failure and represents a morbid adjustment.
-              %p The aforementioned psychic formations are therefore nothing but manifestations of the struggle with reality, the constant effort to adjust one’s primitive feelings to the demands of civilization. In spite of all later development the individual retains all his infantile psychic structures. Nothing is lost; the infantile wishes and primitive impulses can always be demonstrated in the grown-up and on occasion can be brought back to the surface. In his dreams the normal person is constantly reviving his childhood, and the neurotic or psychotic individual merges back into a sort of psychic infantilism through his morbid productions. The unconscious mental activity which is made up of repressed infantile material for ever tries to express itself. Whenever the individual finds it impossible to dominate the difficulties of the world of reality there is a regression to the infantile, and psychic disturbances ensue which are conceived as peculiar thoughts and acts. Thus the civilized adult is the result of his childhood or the sum total of his early impressions; psychoanalysis thus confirms the old saying: The child is father to the man.
-              %p
-                Excerpts from
-                %a{:href => "http://www.gutenberg.org/ebooks/41214"} Totem and Taboo
-                by Sigmund Freud.
-          %button.close-button
-            %i.fa.fa-close Close
-
-
-    %a.cd-nav-trigger{:href => "#cd-nav"}
-      Menu
-      %span
-        / used to create the menu icon
-    / .cd-nav-trigger
     %main
-      %section.cd-section.index.cd-selected
-        %header
-          .cd-title
-            %h2
-              / title here
-            %p
-              / brief description here
-          / .cd-title
-        .cd-content
-          / your content here
-      / .cd-section
-    %nav#cd-nav.cd-nav-container
-      %header
-        %h3 Navigation
-        %a.cd-close-nav{:href => "#0"} Close
-      %ul.cd-nav.list-unstyled
-        %li.cd-selected{"data-menu" => "index"}
-          %a{:href => "index.html"}
-            %span
-              / svg icon here
-            %em
-              / title here
-        %li{"data-menu" => "projects"}
-          / ....
-        / other list items here
-      / .cd-3d-nav
-
+      main
     %script{:src => "//maps.googleapis.com/maps/api/js"}
     %script{:src => "js/main.js"}    
