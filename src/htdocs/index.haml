@@ -16,80 +16,236 @@
     / Add your site or application content here
 
 
-    %section#theGrid
-      %section.grid
+    %main
+      %section.item-grid
         .container.item-container
-          .col-xs-12.col-sm-6.col-md-4.item
-            %a.grid__item.item-link{:href => "#"}
-              .item-box
-                %img{ :src => 'img/portfolio/marianna.jpg', :title => '', :alt => '', :class => 'item-box-img' }
-              .item-text
-                .item-table
-                  .item-text-inner
-                    %h2.title.title--preview.item-text-title On Humans & other Beings
-                    .loader
-              / %span.category Stories for humans
-              / .meta.meta--preview
-              /   %span.meta__date
-              /     %i.fa.fa-calendar-o
-              /     9 Apr
-              /   %span.meta__reading-time
-              /     %i.fa.fa-clock-o
-              /     3 min read
+          .row
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img
+                    %img{ :src => 'img/portfolio/marianna.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/marianna.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "movement": { "perspective" : 700, "translateX" : -15, "translateY" : -15, "translateZ" : 10, "rotateX" : 2, "rotateY" : 10 } }' }
+                  
 
-          .col-xs-12.col-sm-6.col-md-4.item
-            %a.grid__item.item-link{:href => "#"}
-              .item-text.item-text-noimg
-                .item-table
-                  .item-text-inner
-                    %h2.title.title--preview.item-text-title Скачать презентацию
-                    .loader
-                    %span.category.item-text-desc Кратко и понятно
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title On Humans & other Beings
+                      .loader
+                
+
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-text.item-text-noimg
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title Скачать презентацию
+                      .loader
+                      %span.category.item-text-desc Кратко и понятно
 
 
-          .col-xs-12.col-sm-6.col-md-4
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/di-gallery.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/di-gallery.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
 
-    
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
 
-        %section.content
-          .scroll-wrap
-            %article.content__item
-              %span.category.category--full Stories for humans
-              %h2.title.title--full On Humans & other Beings
-              .meta.meta--full
-                %span.meta__author Matthew Walters
-                %span.meta__date
-                  %i.fa.fa-calendar-o
-                  9 Apr
-                %span.meta__reading-time
-                  %i.fa.fa-clock-o
-                  3 min read
-              %p I am fully aware of the shortcomings in these essays. I shall not touch upon those which are characteristic of first efforts at investigation. The others, however, demand a word of explanation.
-              %p The four essays which are here collected will be of interest to a wide circle of educated people, but they can only be thoroughly understood and judged by those who are really acquainted with psychoanalysis as such. It is hoped that they may serve as a bond between students of ethnology, philology, folklore and of the allied sciences, and psychoanalysts; they cannot, however, supply both groups the entire requisites for such co-operation. They will not furnish the former with sufficient insight into the new psychological technique, nor will the psychoanalysts acquire through them an adequate command over the material to be elaborated. Both groups will have to content themselves with whatever attention they can stimulate here and there and with the hope that frequent meetings between them will not remain unproductive for science. life, which it is their object to preserve, a burden and sorrow to him.”
-              %p
-                Excerpts from
-                %a{:href => "http://www.gutenberg.org/ebooks/41214"} Totem and Taboo
-                by Sigmund Freud.
-            %article.content__item
-              %span.category.category--full Love & Hate
-              %h2.title.title--full The Things we Lost in the Fire
-              .meta.meta--full
-                %span.meta__author Christian Belverde
-                %span.meta__date
-                  %i.fa.fa-calendar-o
-                  7 Apr
-                %span.meta__reading-time
-                  %i.fa.fa-clock-o
-                  5 min read
-              %p Faulty psychic actions, dreams and wit are products of the unconscious mental activity, and like neurotic or psychotic manifestations represent efforts at adjustment to one’s environment.
-              %p The slip of the tongue shows that on account of unconscious inhibitions the individual concerned is unable to express his true thoughts; the dream is a distorted or plain expression of those wishes which are prohibited in the waking states, and the witticism, owing to its veiled or indirect way of expression, enables the individual to obtain pleasure from forbidden sources. But whereas dreams, witticisms, and faulty actions give evidences of inner conflicts which the individual overcomes, the neurotic or psychotic symptom is the result of a failure and represents a morbid adjustment.
-              %p The aforementioned psychic formations are therefore nothing but manifestations of the struggle with reality, the constant effort to adjust one’s primitive feelings to the demands of civilization. In spite of all later development the individual retains all his infantile psychic structures. Nothing is lost; the infantile wishes and primitive impulses can always be demonstrated in the grown-up and on occasion can be brought back to the surface. In his dreams the normal person is constantly reviving his childhood, and the neurotic or psychotic individual merges back into a sort of psychic infantilism through his morbid productions. The unconscious mental activity which is made up of repressed infantile material for ever tries to express itself. Whenever the individual finds it impossible to dominate the difficulties of the world of reality there is a regression to the infantile, and psychic disturbances ensue which are conceived as peculiar thoughts and acts. Thus the civilized adult is the result of his childhood or the sum total of his early impressions; psychoanalysis thus confirms the old saying: The child is father to the man.
-              %p
-                Excerpts from
-                %a{:href => "http://www.gutenberg.org/ebooks/41214"} Totem and Taboo
-                by Sigmund Freud.
-          %button.close-button
-            %i.fa.fa-close Close
+
+          .row
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/video-voodee.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/video-voodee.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/42re.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/42re.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/aml-sport.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/aml-sport.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+
+          .row
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/business-cart-voodee.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/business-cart-voodee.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/coffee61.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/coffee61.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/illustration-ufo.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/illustration-ufo.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+
+
+          .row
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/maelow.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/maelow.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/handgum.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/handgum.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/trabler.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/trabler.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+
+          .row
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/voodee.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/voodee.jpg ', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img.item-box-img-minmargin
+                    %img{ :src => 'img/portfolio/zakazkofe.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/zakazkofe.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+
+            .col-xs-12.col-sm-6.col-md-4.item
+              %a.item-link{:href => "#"}
+                .item-box.grid__img
+                  .item-box-img
+                    %img{ :src => 'img/portfolio/coffee-bean.jpg', :title => '', :alt => '', :class => 'item-box-img' }
+                    %img{ :src => 'img/portfolio/coffee-bean.jpg', :title => '', :alt => '', :class => 'tilt-effect item-box-img-absolute', 'data-tilt-options' => '{ "opacity" : 0.5, "extraImgs" : 4, "movement": { "perspective" : 500, "translateX" : -15, "translateY" : -15, "translateZ" : 20, "rotateX" : 15, "rotateY" : 15 } }' }
+                  
+
+                .item-text{ :style => 'pointer-events: none;' }
+                  .item-table
+                    .item-text-inner
+                      %h2.item-text-title DI Gallery
+                      .loader
+                      %span.category.item-text-desc Экспериментальный проект на html5 и css3
+
+
 
 
     %a.cd-nav-trigger{:href => "#cd-nav"}
@@ -97,33 +253,88 @@
       %span
         / used to create the menu icon
     / .cd-nav-trigger
-    %main
-      %section.cd-section.index.cd-selected
-        %header
-          .cd-title
-            %h2
-              / title here
-            %p
-              / brief description here
-          / .cd-title
-        .cd-content
-          / your content here
-      / .cd-section
     %nav#cd-nav.cd-nav-container
       %header
         %h3 Navigation
         %a.cd-close-nav{:href => "#0"} Close
-      %ul.cd-nav.list-unstyled
+      %ul.cd-nav
         %li.cd-selected{"data-menu" => "index"}
           %a{:href => "index.html"}
             %span
-              / svg icon here
-            %em
-              / title here
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %polyline{"data-cap" => "butt", :fill => "none", :points => "10,24.9 10,60 26,60 26,44 38,44 38,60 54,60 54,24.9 ", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %polyline{"data-color" => "color-2", :fill => "none", :points => " 4,30 32,6 60,30 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %rect{"data-color" => "color-2", :fill => "none", :height => "10", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :width => "12", :x => "26", :y => "24"}
+            %em Intro
         %li{"data-menu" => "projects"}
-          / ....
-        / other list items here
+          %a{:href => "projects.html"}
+            %span
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %polyline{"data-color" => "color-2", :fill => "none", :points => " 22,12 22,4 42,4 42,12 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "44", :x2 => "20", :y1 => "44", :y2 => "44"}
+                  %polyline{:fill => "none", :points => "12,44 2,44 2,12 62,12 62,44 52,44 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %polyline{:fill => "none", :points => "58,44 58,60 6,60 6,44 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %rect{"data-color" => "color-2", :fill => "none", :height => "10", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :width => "20", :x => "22", :y => "22"}
+                  %rect{"data-color" => "color-2", :fill => "none", :height => "8", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :width => "8", :x => "12", :y => "40"}
+                  %rect{"data-color" => "color-2", :fill => "none", :height => "8", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :width => "8", :x => "44", :y => "40"}
+            %em Projects
+        %li{"data-menu" => "about"}
+          %a{:href => "about.html"}
+            %span
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %polyline{"data-color" => "color-2", :fill => "none", :points => " 38,16 62,16 62,58 2,58 2,16 26,16 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %path{:d => "M38,20H26V8 c0-3.3,2.7-6,6-6h0c3.3,0,6,2.7,6,6V20z", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %path{:d => "M20,38L20,38 c-2.2,0-4-1.8-4-4v-2c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v2C24,36.2,22.2,38,20,38z", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "38", :x2 => "54", :y1 => "36", :y2 => "36"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "38", :x2 => "48", :y1 => "44", :y2 => "44"}
+                  %path{:d => "M30,48H10v0 c0-3.3,2.7-6,6-6h8C27.3,42,30,44.7,30,48L30,48z", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "32", :x2 => "32", :y1 => "12", :y2 => "10"}
+            %em About
+        %li{"data-menu" => "services"}
+          %a{:href => "services.html"}
+            %span
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "46", :x2 => "58", :y1 => "56", :y2 => "44"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "24", :x2 => "12", :y1 => "10", :y2 => "22"}
+                  %polyline{"data-color" => "color-2", :fill => "none", :points => " 19,29 6,16 18,4 31,17 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %polyline{"data-color" => "color-2", :fill => "none", :points => " 45,31 58,44 60,58 46,56 33,43 ", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %rect{:fill => "none", :height => "56.6", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :transform => "matrix(0.7071 0.7071 -0.7071 0.7071 31 -12.8406)", :width => "19.8", :x => "21.1", :y => "2.7"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "24", :x2 => "30", :y1 => "24", :y2 => "30"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "18", :x2 => "22", :y1 => "30", :y2 => "34"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "36", :x2 => "42", :y1 => "12", :y2 => "18"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "30", :x2 => "34", :y1 => "18", :y2 => "22"}
+                  %line{:fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "12", :x2 => "18", :y1 => "36", :y2 => "42"}
+            %em Services
+        %li{"data-menu" => "careers"}
+          %a{:href => "careers.html"}
+            %span
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %polyline{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :points => "24,40 28,48 36,48 40,40 ", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "24", :x2 => "28", :y1 => "62", :y2 => "48"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "36", :x2 => "40", :y1 => "48", :y2 => "62"}
+                  %path{:d => "M39.7,40H40c12.2,0,22,9.8,22,22v0H2 v0c0-12.2,9.8-22,22-22h0.3", "data-cap" => "butt", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %path{:d => "M47.9,27.5C47.2,35.7,40.3,42,32,42 h0c-8.3,0-15.2-6.4-15.9-14.5", "data-cap" => "butt", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %path{:d => "M16,18c0-8.8,7.2-16,16-16 h0c8.8,0,16,7.2,16,16", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %path{:d => "M12.1,18 c0,0.3-0.1,0.7-0.1,1c0,6.1,4.9,11,11,11c3.7,0,7-1.9,9-4.7c2,2.8,5.3,4.7,9,4.7c6.1,0,11-4.9,11-11c0-0.3,0-0.7-0.1-1H12.1z", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+            %em Careers
+        %li{"data-menu" => "contact"}
+          %a{:href => "contact.html"}
+            %span
+              %svg.nc-icon.outline{:height => "64px", :viewbox => "0 0 64 64", :width => "64px", :x => "0px", :xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", :y => "0px"}
+                %g{:transform => "translate(0, 0)"}
+                  %polyline{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :points => "10,18 32,36 54,18 ", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2"}
+                  %rect{:fill => "none", :height => "44", :stroke => "#9e85d0", "stroke-linecap" => "square", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :width => "60", :x => "2", :y => "10"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "10", :x2 => "18", :y1 => "44", :y2 => "34"}
+                  %line{"data-cap" => "butt", "data-color" => "color-2", :fill => "none", :stroke => "#9e85d0", "stroke-linecap" => "butt", "stroke-linejoin" => "square", "stroke-miterlimit" => "10", "stroke-width" => "2", :x1 => "54", :x2 => "46", :y1 => "44", :y2 => "34"}
+            %em Contact
       / .cd-3d-nav
+    .cd-overlay
+      / shadow layer visible when navigation is visible
 
     %script{:src => "//maps.googleapis.com/maps/api/js"}
     %script{:src => "js/main.js"}    
