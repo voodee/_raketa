@@ -12,11 +12,17 @@
     %script{:src => "js/modernizr-2.8.3.min.js"}
   %body#skrollr-body
     /[if lt IE 8]
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      %p.browserupgrade 
+        You are using an 
+        %strong outdated
+        browser. Please 
+        %a{ :href => "http://browsehappy.com/"} upgrade your browser
+        to improve your experience
     / Add your site or application content here
 
 
     %main
+<<<<<<< HEAD
       %section.item-grid
         .container.item-container
           .row
@@ -336,5 +342,8 @@
     .cd-overlay
       / shadow layer visible when navigation is visible
 
+=======
+      main
+>>>>>>> ae0bc3199244bf421c5123f633708095c88162de
     %script{:src => "//maps.googleapis.com/maps/api/js"}
     %script{:src => "js/main.js"}    

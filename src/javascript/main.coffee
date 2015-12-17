@@ -2,6 +2,7 @@ window.jQuery     = window.$ = require 'jquery'
 plugin            = require 'plugin'
 
 
+<<<<<<< HEAD
 window.classie = require './lib/classie.js'
 
 
@@ -11,10 +12,16 @@ window.classie = require './lib/classie.js'
 
 
 $(document).ready ->
+=======
+
+
+
+>>>>>>> ae0bc3199244bf421c5123f633708095c88162de
 
   require './lib/tiltfx.js'
 
 
+<<<<<<< HEAD
   # $.mousewheel = require './lib/jquery.mousewheel.js'
   require('./lib/jquery.mousewheel.js')($);
   require './lib/jquery.simplr.smoothscroll.js'
@@ -49,6 +56,8 @@ $(document).ready ->
 
   s = skrollr.init()
 
+=======
+>>>>>>> ae0bc3199244bf421c5123f633708095c88162de
 
 
 
